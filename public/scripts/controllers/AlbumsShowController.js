@@ -1,4 +1,5 @@
 angular
+<<<<<<< HEAD
 	.module('tunely')
 	.controller('AlbumsShowController', AlbumsShowController);
 
@@ -14,4 +15,24 @@ function AlbumsShowController (  $http,   $routeParams  ) {
     }).then(function successCallback(json) {
     vm.album = json.data;
     });
+=======
+  .module('tunely')
+  .controller('AlbumsShowController', AlbumsShowController);
+
+AlbumsShowController.$inject = ['$http', '$routeParams'];
+
+function AlbumsShowController ($http, $routeParams) {
+  var vm = this;
+  vm.newSong = {};
+
+  $http({
+    method: 'GET',
+    url: '/api/albums/'+$routeParams.id
+  }).then(function successCallback(json) {
+    vm.album = json.data;
+  }, function errorCallback(response) {
+    console.log('There was an error getting the data', response);
+  });
+
+>>>>>>> aeedb84d81de135c130c24cb831fdb42a9e8c8d8
 }

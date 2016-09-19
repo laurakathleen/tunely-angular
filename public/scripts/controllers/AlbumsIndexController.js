@@ -59,4 +59,8 @@ function AlbumsIndexController ($http) {
     });
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aeedb84d81de135c130c24cb831fdb42a9e8c8d8
